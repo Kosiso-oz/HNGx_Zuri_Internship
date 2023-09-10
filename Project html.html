@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Personal Data Showcase</title>
+
+</head>
+
+<body>
+
+    <header>
+        <h1> Personal Data Showcase</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="data-item" data-testid="slackUserName">
+
+            <label>My Slack Name:</label>
+
+            <span>Kosisochukwu Ujunwa Ozulumba</span>
+
+        </div>
+
+        <div class="data-item" data-testid="slackDisplayImage">
+
+            <label>My Slack Display Picture:</label>
+
+            <img src="https://i.ibb.co/pvrpsLG/IMG-7802.jpg" width="300px" alt="Kosisochukwu Ujunwa Ozulumba">
+           
+        
+        </div>
+
+        <div class="data-item" data-testid="currentDayOfTheWeek">
+
+            <label>Current Day:</label>
+
+            <span id="currentDay"></span>
+
+        </div>
+
+        <div class="data-item" data-testid="currentUTCTime">
+
+            <label>Current UTC Time:</label>
+
+            <span id="currentUTC"></span>
+
+        </div>
+
+        <div class="data-item" data-testid="myTrack">
+
+            <label>My Track of Choice:</label>
+
+            <span>Front-End Track</span>
+
+        </div>
+
+
+    <footer>
+
+        <div class="github-link" data-testid="githubURL">
+
+            <a href="https://github.com/Kosiso-oz/" target="_blank">My GitHub Respository</a>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        function updateDateTime() {
+
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            const currentDate = new Date();
+
+            const currentDay = daysOfWeek[currentDate.getUTCDay()];
+
+            const currentUTC = currentDate.getTime();
+
+
+
+            document.getElementById("currentDay").textContent = currentDay;
+
+            document.getElementById("currentUTC").textContent = currentUTC;
+
+        }
+
+        updateDateTime();
+
+        setInterval(updateDateTime, 1000);
+
+    </script>
+
+</body>
+</html>
